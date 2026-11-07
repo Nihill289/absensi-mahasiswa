@@ -1,0 +1,757 @@
+
+/* =================================
+   DASHBOARD ABSENSI MAHASISWA TRI
+   POLITEKNIK AMAMAPARE
+================================= */
+
+:root {
+    --primary: #173b63;
+    --primary-light: #eaf2fa;
+    --primary-hover: #245887;
+
+    --sidebar-bg: #112b49;
+    --sidebar-text: #b9c9db;
+
+    --body-bg: #f5f7fb;
+    --card-bg: #ffffff;
+
+    --text-dark: #24364b;
+    --text-muted: #8996a8;
+
+    --border: #e9edf3;
+
+    --success: #21966a;
+    --warning: #e5a43b;
+    --danger: #dc6262;
+
+    --radius: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--body-bg);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* MAIN LAYOUT */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 260px;
+    padding: 30px;
+}
+
+/* HEADER */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.page-heading p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.user-info h4 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-info span {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+/* STATISTICS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: .25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(20,45,75,.06);
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+    margin-top: 17px;
+    font-weight: 800;
+}
+
+.stat-card p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* CONTENT GRID */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 23px;
+    margin-bottom: 22px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.panel-header h3 {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.panel-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* BADGES */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.badge-success {
+    background: #e7f6ef;
+    color: #21966a;
+}
+
+.badge-warning {
+    background: #fff4df;
+    color: #c18b2e;
+}
+
+.badge-danger {
+    background: #ffeded;
+    color: #d35b5b;
+}
+
+/* COURSE CARD */
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.course-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 17px;
+    transition: .2s;
+}
+
+.course-card:hover {
+    border-color: #c6d8ea;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.course-header h4 {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.course-info {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.progress-bar {
+    height: 7px;
+    border-radius: 20px;
+    background: #edf1f5;
+    overflow: hidden;
+    margin-top: 9px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #245887, #56a3d9);
+    border-radius: 20px;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.data-table th {
+    background: #f8fafc;
+    color: #8290a2;
+    text-align: left;
+    padding: 14px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.data-table td {
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.data-table tr:hover td {
+    background: #fafcff;
+}
+
+/* BUTTONS */
+
+.btn {
+    border: none;
+    border-radius: 9px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-light {
+    background: #f1f4f8;
+    color: var(--text-dark);
+}
+
+/* FOOTER */
+
+.dashboard-footer {
+    padding: 20px 0;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.alert-success {
+    background: #e7f6ef;
+    color: #21966a;
+    border: 1px solid #c9edda;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background: #ffeded;
+    color: #d35b5b;
+    border: 1px solid #f5d0d0;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* DASHBOARD SECTION */
+
+.ringkasan,
+.kalender,
+.statistik,
+.admin {
+    margin-bottom: 30px;
+}
+
+.ringkasan h1,
+.kalender h2,
+.statistik h2,
+.admin h2 {
+    color: #24364b;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 9px;
+}
+
+.subjudul,
+.petunjuk {
+    color: #8996a8;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* RINGKASAN */
+
+.kartu-ringkasan {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-top: 20px;
+}
+
+.kartu {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #e9edf3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .2s;
+}
+
+.kartu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(20,45,75,.06);
+}
+
+.kartu-angka {
+    font-size: 29px;
+    font-weight: 800;
+    color: #173b63;
+}
+
+.kartu-label {
+    font-size: 12px;
+    color: #8996a8;
+}
+
+.kartu-selesai {
+    border-left: 4px solid #21966a;
+}
+
+.kartu-berjalan {
+    border-left: 4px solid #e5a43b;
+}
+
+.kartu-rendah {
+    border-left: 4px solid #dc6262;
+}
+
+/* KALENDER */
+
+.kalender,
+.statistik,
+.admin {
+    background: white;
+    border: 1px solid #e9edf3;
+    border-radius: 15px;
+    padding: 24px;
+}
+
+.legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    margin: 20px 0;
+    color: #8996a8;
+    font-size: 11px;
+}
+
+.legenda li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.penanda {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.penanda-penuh {
+    background: #21966a;
+}
+
+.penanda-sebagian {
+    background: #e5a43b;
+}
+
+.penanda-kosong {
+    background: #dce3ec;
+}
+
+.penanda-libur {
+    background: #ffffff;
+    border: 1px solid #dce3ec;
+}
+
+.daftar-bulan {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bulan {
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 0;
+}
+
+.bulan h3 {
+    font-size: 14px;
+    margin-bottom: 13px;
+    color: #173b63;
+}
+
+.grid-kalender {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
+    table-layout: fixed;
+}
+
+.grid-kalender th {
+    font-size: 10px;
+    color: #8996a8;
+    padding: 8px 0;
+}
+
+.grid-kalender td {
+    height: 43px;
+    text-align: center;
+    border-radius: 7px;
+    background: #f7f9fc;
+    font-size: 11px;
+}
+
+.grid-kalender td form {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-kalender td label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.grid-kalender td input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.grid-kalender .hitung {
+    font-size: 9px;
+    color: #8996a8;
+}
+
+.sel-penuh {
+    background: #e7f6ef !important;
+    color: #21966a;
+}
+
+.sel-sebagian {
+    background: #fff4df !important;
+    color: #bd8529;
+}
+
+.sel-kosong {
+    background: #f2f4f7 !important;
+}
+
+.sel-hari-ini {
+    outline: 2px solid #2878b9;
+    outline-offset: -2px;
+}
+
+.sel-penuh input:checked ~ .angka {
+    font-weight: 800;
+}
+
+.sel-kosong-grid {
+    background: transparent !important;
+}
+
+/* MATA KULIAH */
+
+.matkul {
+    padding: 20px;
+    border: 1px solid #e9edf3;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    transition: .2s;
+}
+
+.matkul:hover {
+    border-color: #c6d8ea;
+}
+
+.matkul-kepala {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.matkul-kepala h3 {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #24364b;
+}
+
+.lencana {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.lencana-selesai {
+    background: #e7f6ef;
+    color: #21966a;
+}
+
+.lencana-berjalan {
+    background: #fff4df;
+    color: #bd8529;
+}
+
+.lencana-rendah {
+    background: #ffeded;
+    color: #d35b5b;
+}
+
+.meta {
+    color: #8996a8;
+    font-size: 11px;
+    margin: 9px 0 15px;
+}
+
+.progres {
+    width: 100%;
+    height: 8px;
+    border-radius: 20px;
+    background: #edf1f5;
+    overflow: hidden;
+}
+
+.progres-isi {
+    height: 100%;
+    background: linear-gradient(90deg, #173b63, #56a3d9);
+    border-radius: 20px;
+}
+
+.angka-progres {
+    color: #8996a8;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.daftar-pertemuan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.daftar-pertemuan button {
+    border: 1px solid #e9edf3;
+    background: #f8fafc;
+    color: #52667d;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+}
+
+.daftar-pertemuan button:hover {
+    background: #ffeded;
+    color: #d35b5b;
+}
+
+/* TABEL ADMIN */
+
+.admin h3 {
+    margin: 25px 0 14px;
+    font-size: 14px;
+}
+
+.tabel {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.tabel th {
+    background: #f5f8fc;
+    color: #8290a2;
+    padding: 13px;
+    font-size: 11px;
+    text-align: left;
+}
+
+.tabel td {
+    padding: 13px;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 12px;
+}
+
+@media(max-width: 900px) {
+    .kartu-ringkasan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .daftar-bulan {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 480px) {
+    .kartu-ringkasan {
+        gap: 10px;
+    }
+
+    .kartu {
+        padding: 14px;
+    }
+
+    .kalender,
+    .statistik,
+    .admin {
+        padding: 14px;
+    }
+
+    .bulan {
+        padding: 8px;
+    }
+
+    .grid-kalender {
+        border-spacing: 2px;
+    }
+
+    .grid-kalender td {
+        height: 37px;
+    }
+}

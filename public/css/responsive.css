@@ -1,0 +1,93 @@
+
+/* RESPONSIVE DASHBOARD */
+
+@media (max-width: 1100px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+        padding: 5px 0 25px;
+    }
+
+    .sidebar-brand > div:last-child,
+    .sidebar-label,
+    .sidebar-menu a span:not(.sidebar-icon) {
+        display: none;
+    }
+
+    .sidebar-menu a {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .sidebar-icon {
+        font-size: 19px;
+    }
+
+    .main-content {
+        margin-left: 75px;
+        padding: 20px 15px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .page-heading h1 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-card h2 {
+        font-size: 22px;
+    }
+
+    .stat-card p {
+        font-size: 10px;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .calendar-grid {
+        gap: 3px;
+    }
+
+    .calendar-date {
+        min-height: 42px;
+        font-size: 10px;
+    }
+
+    .calendar-date .meeting-count {
+        font-size: 8px;
+    }
+
+    .header-user .user-info {
+        display: none;
+    }
+}

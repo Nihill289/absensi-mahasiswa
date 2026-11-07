@@ -1,0 +1,94 @@
+
+/* ACADEMIC CALENDAR */
+
+.calendar {
+    width: 100%;
+}
+
+.calendar-month {
+    margin-bottom: 25px;
+}
+
+.calendar-month h4 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.calendar-day-name {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 8px 0;
+}
+
+.calendar-date {
+    min-height: 54px;
+    border: 1px solid #edf0f5;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.calendar-date:hover {
+    border-color: var(--primary);
+    background: #f4f8fc;
+}
+
+.calendar-date.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.calendar-date.empty {
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+.calendar-date .meeting-count {
+    font-size: 9px;
+    color: var(--success);
+    font-weight: 700;
+}
+
+.calendar-date.selected .meeting-count {
+    color: white;
+}
+
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend-color {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+}
